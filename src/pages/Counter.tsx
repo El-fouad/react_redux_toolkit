@@ -8,8 +8,6 @@ import {
 
 function Counter() {
   const count = useSelector((state: { counter: { value: number } }) => {
-    console.log(state.counter);
-
     return state.counter?.value;
   });
   const dispatch = useDispatch();
