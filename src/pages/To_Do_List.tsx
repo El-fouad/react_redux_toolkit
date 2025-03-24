@@ -1,11 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addTask,
-  nextStep,
-  removeTask,
-  Task,
-} from "../slices/to_do_list_slice";
-import { RootState } from "../store/store";
+import { addTask, nextStep, removeTask } from "../slices/to_do_list_slice";
 import { useState } from "react";
 
 const To_Do_List = () => {
@@ -21,6 +15,7 @@ const To_Do_List = () => {
   );
 
   const handleNewTask = () => {
+    if (newTodo === "") return;
     dispatch(addTask(newTodo));
     setNewTodo("");
   };
